@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css' rel='stylesheet' />
+    <title>Corona Map Plot</title>
+    
+</head>
+<style>
+    *{
+        margin: 0px;
+        padding: 0px;
+
+    }
+    table {
+    display: flex;
+    justify-content: center;
+    background: #b9b8b8;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 22px;
+}
+div#amazon-ai-player-label {
+    margin-bottom: 10px;
+}
+    div#amazon-ai-player-label {
+    text-align: center;
+}
+#map {
+    width: 100vw;
+    height: 100vh;
+}
+.quake-info {
+  position: absolute;
+  font-family: sans-serif;
+  margin-top: 5px;
+  margin-left: 5px;
+  padding: 5px;
+  width: 30%;
+  border: 2px solid black;
+  font-size: 14px;
+  color: rgb(235, 0, 0);
+  background-color: #fff;
+  border-radius: 3px;
+  z-index: 10;
+}
+</style>
+
+<body>
+    <table>
+    
+        <tr>
+            <td id="main-tab">
+                <div id="amazon-ai-player-label">Listen to this article</div>
+                <div id="amazon-ai-player-container">
+                    <audio class="amazon-ai-player" id="amazon-ai-player" preload="none" controls autoplay
+                        controlslist="nodownload" >
+                        <source type="audio/mpeg"
+                            src="./11640663353405.mp3">
+                    </audio>
+                </div>
+                <div id="amazon-polly-subscribe-tab"></div>
+                <div id="amazon-polly-by-tab"></div>
+            </td>
+        </tr>
+    </table>
+    
+
+    <div class='quake-info'>
+        <div><strong>Total Cases:</strong> <span id='mag'></span></div>
+        <div><strong>Location:</strong> <span id='loc'></span></div>
+        <div><strong>Date:</strong> <span id='date'></span></div>
+      </div>
+    <div id='map'></div>
+   
+    
+
+
+</body>
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js'></script>
+<script>
+  mapboxgl.accessToken = 'pk.eyJ1Ijoic2FydmVzaGthcDQ5IiwiYSI6ImNreHcwd3VycjFxbTUyd28wbTUyMmZ6YXUifQ.pSfeZkIV5BqV534MwwZncg';
+  var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/dark-v10',
+    zoom: 1,
+    center: [0,20]
+  });
+</script>
+<script src="index.js"></script>
+
+</html>
